@@ -1,0 +1,19 @@
+{
+  "name": "introreactjs",
+  "version": "1.0.0",
+  "description": "- Não é um framework \r - É uma biblioteca JS para criar interfaces de usuário",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizrosalba/IntroReactJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizrosalba/IntroReactJs/issues"
+  },
+  "homepage": "https://github.com/luizrosalba/IntroReactJs#readme"
+}
