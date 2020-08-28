@@ -9,11 +9,15 @@ function soma(a, b) {
   alert(a + b)
 }
 
+///camelCase obrigatorio !! 
+/// pode ter quantos componentes quiser 
+/// 
+
 function App() {
   return (
     <div className="App">
       Hello World
-      <Button onClick={() => soma(10, 20)} name="Bruno Carneiro" />
+      <Button onClick={() => soma(10, 20)} name="Bruno Carneiro" /> 
       <ComponentA>
         <ComponentB>
           <Button onClick={() => soma(40, 20)} name="Aline Carneiro" />

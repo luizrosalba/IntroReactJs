@@ -21,5 +21,22 @@
 - o browse tem o DOM 
 - o react nao trabalha em cima do dom diretamente, utiliza o Dom virtual que controla tudo que está no DOM
 - Sempre que há uma mudança no html o react faz uma diferença e somente no pedaço onde há atualização é feita uma nova renderização 
-
+## components 
+- Deixa tudo modular ? 
+- componentes e props 
+- tornar componentizavel é bom 
+- react trabalha bem com reaproveitamento de código 
+- pode trabalhar como função ou classe 
+- Js não tem classe , tem protótipo 
+- Quando JS é transpilado as classes são transformadas em protótipos 
+- components - src - index 
+- npm i 
+- npm run start 
+- 
+## Renderizando elementos 
+- Estado e ciclo de vida 
+- Inicialização 
+- Montagem 
+- Atualização 
+- Desmontagem 
 
