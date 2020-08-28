@@ -39,4 +39,4 @@
 - Montagem 
 - Atualização 
 - Desmontagem 
-
+![](img/Capturar.PNG)
