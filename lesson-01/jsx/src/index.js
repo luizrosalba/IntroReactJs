@@ -6,10 +6,11 @@ function sum(a, b) {
   return a + b
 }
 
+/// para usar class no react usamos classname pois o react usa a palavra reservada class 
 function primeiroJSX() {
   return (
-    <div className="teste">
-      Bruno Carneiro - Introdução ao ReactJS
+    <div className="teste"> 
+      Luiz Rosalba  - Introdução ao ReactJS
       <h1>Soma: {sum(10, 20)}</h1>
     </div>
   )
@@ -20,7 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {primeiroJSX()}
+      {primeiroJSX()} /// para executar um JS dentro de um JSX deve estar entre chaves 
     </div>
   )
 }

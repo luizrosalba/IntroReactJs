@@ -40,3 +40,32 @@
 - Atualização 
 - Desmontagem 
 ![](img/Capturar.PNG)
+- nenhum componente pai ou filho devem saber se outro componente possui estado ou nao 
+- o estado é apoenas local ao componente e c aso seja necessário enviar algum atributo para outro então é feito via props
+## Ecossistema 
+Bibliotecas complementares 
+- React Router gerenciamento de estados 
+- Redux 
+- Material UI criação de interfaces 
+- Ant-Design 
+- Storybook criação de componentes 
+- Gastby 
+- Jest    teste 
+- React i18n Next  internacionalizacao 
+## Configuração 
+- React Create App (starta projetos com configuração básica, servidor , Jest ... )
+- Utiliza o react Scripts 
+- Task Runners e Bundlers Sizers 
+- npm init 
+- npm install --save react@16.8.6 react-dom@16.8.6 @react-scripts3.0.1
+- pasta public -> pasta inicial do projeto 
+- - React requer um arquivo css
+- react eh uma single page application (SPA) , baixa todo o prohjeto e renderiza uma  vez todas as rotas , toda vez que o user muda de rota , ele renderiza essa rota ( performace ) 
+## JSX 
+- Não é HTML nem String 
+- É uma linguagem de marcação que permite criar estruturas do HTML com o poder do javascript 
+- React usa componentes 
+- Não é obrigatória a utilização do JSX mas facilita 
+- Browser nao intepreta JSX , para isso é necessario um transpilador para a aplicação entender o código (exemplo BABEL) 
+- para executar um JS dentro de um JSX deve estar entre chaves 
+- 
