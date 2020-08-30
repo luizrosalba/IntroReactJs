@@ -4,16 +4,16 @@ import "./styles.css"
 
 class App extends Component {
 
-  constructor(props) {
+  constructor(props) {  /// inicializacao 
     super(props)
 
-    this.state = {
+    this.state = {  /// parametro state 
       clock: 1000,
       copo: 'água'
     }
   }
 
-  componentDidMount() {
+  componentDidMount() { /// sdepois de mointado 
     window.setTimeout(() => {
       this.setState({
         copo: 'suco'
@@ -22,13 +22,13 @@ class App extends Component {
   }
 
   alterarCopo = () => {
-    this.setState({
+    this.setState({ /// posso passar qquer parametro para o state alterar sempre que  for alterar algum state use set state 
       copo: 'refrigerante'
     })
   }
 
   render() {
-    const { clock, copo } = this.state
+    const { clock, copo } = this.state /// desestruturando para nao ficar verboso 
     return (
       <div>
         <h1>{clock}</h1>
