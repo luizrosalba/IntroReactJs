@@ -19,6 +19,7 @@
 - React DOM toda renderização é feita em nós raíz
 - a renderização é a menor parte para construir uma interface no react 
 - o browse tem o DOM 
+- a renderização de um componente React no DOM é feita Utilizando o ReactDOM.render.
 - o react nao trabalha em cima do dom diretamente, utiliza o Dom virtual que controla tudo que está no DOM
 - Sempre que há uma mudança no html o react faz uma diferença e somente no pedaço onde há atualização é feita uma nova renderização 
 ## components 
@@ -68,4 +69,47 @@ Bibliotecas complementares
 - Não é obrigatória a utilização do JSX mas facilita 
 - Browser nao intepreta JSX , para isso é necessario um transpilador para a aplicação entender o código (exemplo BABEL) 
 - para executar um JS dentro de um JSX deve estar entre chaves 
+# O que é webpack 
+## Integrando webpack ao desenvolvimento com ReactJS
+- Webpack - Eslint
+- -e um module bundler ( empacotador de modulos para aplicações js )
+- gerar bundler será utilizano no HTML em ES5 
+- https://webpack.js.org/
+- React script (aquele do facebook) utiliza webpack por trás 
+- Suporte : Fontes , CSS , Imagens , HTML , JS (JSON) , Plugins 
+- Entry - utilizando grafo , o webpack precisa de um ponto de entrada para buscar todos os modulos e dependencias 
+- Output 
+- DEtermina os bundlers que o webpack emite 
+- loaders - permite que o WP gerencie arquivos nao JS 
+- Plugins - Podem ser utilizados para otimizacao de pacotes, minificacao , injecao de scripts 
+- mode utilizados para abordagens de configurações. É possivle configurar modulos como production , development ou none 
+- production trás otimizacoes internas 
+-criacao do webpack.config.js 
+- development é utilizado com tres plugins , UglifyJsPligin , ModuleConcatenationPlugin e NoEmitOn ErrosPlugin 
+- npm i --save-dev -D webpack webpack-cli
+- npm i --save-dev -D webpack webpack-cli "build":"webpack --mode production" 
+- Se fazemos no package.json  criamos o bundler.js em modo produção 
+-  "scripts": {  
+-    "build": "webpack --mode production",
+- se mudamos o ponto de entrada no webpack.config.js  para entry: './index.js', /// ponto de entrada
+- conseguimos executar node.\dist\bundler.js 
+- npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev 
+- com o preset env posso transpilar para es5 , es 6 ... para manter a compatibilidade com browsers mais antigos
+- para o babel poder transpilar o react para es5 usamos o preset-react
+- babelrc ->  como usamos o presetenv e o preset do react para o babel funcionar precisamo do arquivo babel rc
+- adicionar os presets lá 
+- npm i react react-dom
+- babelrc le os plugins e os presets 
+- criamos o app (index.js e app.jsx) 
+- npm run dev 
+- npm i webpack-dev-server 
+- "start:dev": "webpack-dev-server", já gera o servidor pra vc 
+- hotreloader a cada alteração ele atualiza a pagina automaticamente 
+- npm run start:dev
+- http://localhost:8080/
+-  se vc adiciona um arquivo depois de gerar o bundle ele nao será importado para o projeto 
+- 
+
+## Instalação e Configuração do ESLint 
+
 - 
