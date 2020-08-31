@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       <p>Digital Innovation One</p>
-      <p>Bem vindo a nossa aula =D.</p>
+      <p>Bem vindo a nossa aula =D. Luiz Rosalab </p>
       <div>Webpack 4</div>
       <Button />
     </div>
