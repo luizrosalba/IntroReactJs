@@ -2,6 +2,7 @@ const path = require('path') /// pega o diretorio padrao
 const HtmlWebPackPlugin = require("html-webpack-plugin");  /// adicionando plugin para HTML 
 
 module.exports = {
+  
   devtool: 'source-map',
   entry: './src/index.js', /// ponto de entrada 
   output: {

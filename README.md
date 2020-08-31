@@ -96,7 +96,7 @@ Bibliotecas complementares
 - npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev 
 - com o preset env posso transpilar para es5 , es 6 ... para manter a compatibilidade com browsers mais antigos
 - para o babel poder transpilar o react para es5 usamos o preset-react
-- babelrc ->  como usamos o presetenv e o preset do react para o babel funcionar precisamo do arquivo babel rc
+- babelrc ->  como usamos o presetenv e o preset do react para o babel funcionar precisamos do arquivo babel rc
 - adicionar os presets lá 
 - npm i react react-dom
 - babelrc le os plugins e os presets 
@@ -112,4 +112,11 @@ Bibliotecas complementares
 
 ## Instalação e Configuração do ESLint 
 
-- 
+- npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-watch
+- npm run eslint
+- npm i react react-dom react-scripts
+- sourcemap - gera um mapeamento de todos os arquivos de uma forma fácil de  debugar 
+- no webpack adicionar devtool: 'source-map',
+- npm run start:dev  
+
+

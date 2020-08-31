@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Button = () => (
-  <button>Olá =D sdasdad {a}</button>
+  <button>Olá =D sdasdad </button>
 )
 
 export default Button
