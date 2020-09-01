@@ -118,5 +118,306 @@ Bibliotecas complementares
 - sourcemap - gera um mapeamento de todos os arquivos de uma forma fácil de  debugar 
 - no webpack adicionar devtool: 'source-map',
 - npm run start:dev  
+# Aula 3 - Conceitos aplicados aos tipos de dados e condições da biblioteca 
+- Renderização condicional : Em React você pode criar componentes distintos ,que encapsulam o comportamento que você precisa. Você pode renderizar apenas alguns dos elementos , dependendo do estado da sua aplicação 
+- lesson3 - conditional 
+-  npm i 
+- npm start 
+- dentro do app para pular linha < br />
+- {hasCustomer &&  (Apresenta_botao) }
+- {hasCustomer ?  (Apresenta_botao):(Cadastra_cliente) }
+- o ideal é separar apresenta_botao e cadastra_cliente em renders , que serão executados observando o resutlado de hasCustomer 
+## Listas e Chaves 
+- npm i 
 
+- cada elemento deve ter sua key - neste caso usamos o id de customer para fazer a key . colocar o indice poderia dar problema se estivermos trabalhando com dois vetores . chaves devem ser unicas apenas entre elementos irmaos 
+
+```
+import React from "react";
+
+const listCustomer = [
+  {
+    id: 1,
+    name: 'Bruno Carneiro',
+    skills: ['React', 'Node', 'CSS', 'Webpack']
+  },
+  {
+    id: 2,
+    name: 'Aline Carneiro',
+    skills: ['HTML', 'React Native', 'Go', 'JS']
+  },
+  {
+    id: 3,
+    name: 'Fulano de Tal',
+    skills: ['Assembly']
+  },
+  {
+    id: 4,
+    name: 'José Ciclano',
+    skills: ['Reason']
+  }
+]
+
+const App = () => {
+
+  const renderCustomers = (customer, index) => {
+    return (
+      <div key={`customer-${customer.id}`}>
+        <li>{customer.name}</li>
+        {customer.skills.map(renderSkills)}
+      </div>
+    )
+  }
+
+  const renderSkills = (skill, index) => {
+    return (
+      <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+        <li>{skill}</li>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula =D.</p>
+      <div>
+        <ul>
+          {listCustomer.map(renderCustomers)}
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default App;
+```
+## Manipulando Eventos 
+
+- similar a mnanipular elementos do dom 
+- diferenças sintaxes: 
+- eventos em react são nomeadas usando camelCase ao invés de letras minúsculas 
+- com o jsx você passa uma função como manipulador de enventos ao invés de um texto 
+### Eventos 
+- npm i 
+- npm start 
+
+- passando eventos . "e" acessa o prototype do browser daquele elemento 
+-  
+
+```
+import React from "react";
+
+const showEvent = (e) => {
+  console.log('evento clicado');
+  console.log(e);
+}
+
+const Button = <button onClick={showEvent}> Mostrar Evento </button> 
+
+const App = () => {
+  const handleChange = (e) =>  {
+    const {value} = e.target; 
+    console.log(value);
+  }
+
+  return (
+    <div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula =D.</p>
+      <input onChange={handleChange} /> 
+
+      <div>
+        <ul>
+          {Button}
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default App;
+```
+
+Mudando o contexto para dentro do app para acessar sem usar o this 
+
+```
+import React from "react";
+
+
+const App = () => {
+
+  const name = 'Luiz Rosalba '
+
+  const handleChange = (e) =>  {
+    const {value} = e.target; 
+    console.log(value);
+  }
+
+  const showEvent = (e) => {
+    console.log('evento clicado');
+    console.log(e);
+    alert(name );
+  }
+
+  const Button = <button onClick={showEvent}> Mostrar Evento </button> 
+
+  return (
+    <div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula =D.</p>
+      <input onChange={handleChange} /> 
+
+      <div>
+        <ul>
+          {Button}
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default App;
+```
+Adicionando um botao para deletar cada cliente na lista da aula anterior : 
+```
+import React from "react";
+
+const listCustomer = [
+  {
+    id: 1,
+    name: 'Bruno Carneiro',
+    skills: ['React', 'Node', 'CSS', 'Webpack']
+  },
+  {
+    id: 2,
+    name: 'Aline Carneiro',
+    skills: ['HTML', 'React Native', 'Go', 'JS']
+  },
+  {
+    id: 3,
+    name: 'Fulano de Tal',
+    skills: ['Assembly']
+  },
+  {
+    id: 4,
+    name: 'José Ciclano',
+    skills: ['Reason']
+  }
+]
+
+const App = () => {
+
+const handleClick = (e) =>{
+  console.log('deletar cliente');
+}
+
+  const renderCustomers = (customer, index) => {
+    return (
+      <div key={`customer-${customer.id}`}>
+        <li>{customer.name} <button onClick={handleClick}>Deletar Cliente </button>  </li>
+        {customer.skills.map(renderSkills)}
+      </div>
+    )
+  }
+
+  const renderSkills = (skill, index) => {
+    return (
+      <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+        <li>{skill}</li>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula =D.</p>
+      <div>
+        <ul>
+          {listCustomer.map(renderCustomers)}
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default App;
+```
+
+Passando o id como argumento para o manipilador de eventos 
+
+```
+import React from "react";
+
+const listCustomer = [
+  {
+    id: 1,
+    name: 'Bruno Carneiro',
+    skills: ['React', 'Node', 'CSS', 'Webpack']
+  },
+  {
+    id: 2,
+    name: 'Aline Carneiro',
+    skills: ['HTML', 'React Native', 'Go', 'JS']
+  },
+  {
+    id: 3,
+    name: 'Fulano de Tal',
+    skills: ['Assembly']
+  },
+  {
+    id: 4,
+    name: 'José Ciclano',
+    skills: ['Reason']
+  }
+]
+
+const App = () => {
+
+const handleClick = (e,id) =>{
+  console.log('deletar cliente');
+  alert(`ID do cliente : ${id}`)
+}
+
+  const renderCustomers = (customer, index) => {
+    return (
+      <div key={`customer-${customer.id}`}>
+        <li>{customer.name} <button onClick={(e)=>handleClick(e,customer.id)}>Deletar Cliente </button>  </li>
+        {customer.skills.map(renderSkills)}
+      </div>
+    )
+  }
+
+  const renderSkills = (skill, index) => {
+    return (
+      <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+        <li>{skill}</li>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula =D.</p>
+      <div>
+        <ul>
+          {listCustomer.map(renderCustomers)}
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default App;
+```
+### Pensando do jeito React 
+- thinking react 
+- npm i 
+- deixar os componentes da forma mais livre possivel 
+- Começar com um mock  (simulam o comportamento de objetos reais de forma controlada. São normalmente criados para testar o comportamento de outros objetos. Em outras palavras, os objetos mock são objetos “falsos” que simulam o comportamento de uma classe ou objeto “real” para que possamos focar o teste na unidade a ser testada.)
+- Separar a Ui em páginas (escopos) diferentes por exemplo , colocar listcustomer em um arquivo e importa-lo 
+- separar a UI em uma hierarquia de componentes
+- Criar uma versão estátia  em react 
+- Identificar a representação minima mas completa da UI 
+- Identificar onde o state deve ficar 
+- adicionar o fluxo de dados inverso 
+- react é funcional e modular, deve estar todo separadinho em arquivos 
+- rotas do projeto são os containers (Views )
 

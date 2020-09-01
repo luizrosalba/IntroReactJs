@@ -4,7 +4,7 @@ const buttonA = <button>Histórico dos Clientes</button>
 
 const buttonB = <button>Cadastrar Cliente</button>
 
-const hasCustomer = true
+const hasCustomer = true;
 
 const App = () => {
 
@@ -42,7 +42,8 @@ const App = () => {
     <div>
       <p>Digital Innovation One</p>
       <p>Bem vindo a nossa aula =D.</p>
-      {hasCustomer ? renderShowHistory : renderAddCustomer}
+      
+      {hasCustomer ? renderShowHistory : renderAddCustomer }
       <div>
         {showCustomer()}
       </div>
